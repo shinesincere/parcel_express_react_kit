@@ -1,0 +1,63 @@
+{
+  "author": "shine sincere",
+  "license": "MIT",
+  "version": "1.0.0",
+  "name": "parcel_express_react_kit",
+  "repository": "https://github.com/shinesincere/parcel_express_react_kit",
+  "homepage": "https://shinesincere.github.io/parcel_express_react_kit",
+  "description": "react project served by express and built by parcel",
+  "keywords": [
+    "parcel",
+    "express",
+    "react"
+  ],
+  "main": "index.js",
+  "scripts": {
+    "d:c": "parcel watch client/index.html --out-dir dist/client",
+    "d:s": "nodemon --watch server --exec babel-node server/index.js",
+    "dcs": "npm-run-all --parallel d:*",
+    "b:c": "parcel build client/index.html --out-dir build/client --public-url ./",
+    "b:s": "parcel build server/index.js --out-dir build/server --target=node",
+    "bcs": "npm-run-all --parallel b:*",
+    "ghd": "rm -rf dist && parcel build client/index.html --public-url /parcel_express_react_kit && gh-pages -d dist"
+  },
+  "dependencies": {
+    "express": "^4.16.4",
+    "postcss-modules": "^1.4.1",
+    "react": "^16.8.2",
+    "react-dom": "^16.8.2",
+    "typography": "^0.16.18"
+  },
+  "devDependencies": {
+    "autoprefixer": "^9.4.7",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "body-parser": "^1.18.3",
+    "gh-pages": "^2.0.1",
+    "nodemon": "^1.18.10",
+    "npm-run-all": "^4.1.5",
+    "parcel-bundler": "^1.11.0",
+    "sass": "^1.17.0"
+  },
+  "babel": {
+    "presets": [
+      "env",
+      "react"
+    ],
+    "plugins": []
+  },
+  "postcss": {
+    "modules": true,
+    "plugins": {
+      "autoprefixer": {
+        "browsers": [
+          ">1%",
+          "last 2 versions",
+          "IE 10"
+        ]
+      }
+    }
+  }
+}
